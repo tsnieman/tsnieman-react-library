@@ -1,6 +1,6 @@
 {
 	"name": "tsnieman-react-library",
-	"version": "1.0.0-alpha.6",
+	"version": "1.0.0-alpha.7",
 	"license": "(ISC OR GPL-3.0)",
 	"private": false,
 	"main": "dist/index.js",
@@ -26,6 +26,7 @@
 	"devDependencies": {
 		"@babel/cli": "^7.6.0",
 		"@storybook/addon-actions": "^5.2.1",
+		"@storybook/addon-knobs": "^5.2.1",
 		"@storybook/addon-links": "^5.2.1",
 		"@storybook/addons": "^5.2.1",
 		"@storybook/react": "^5.2.1",

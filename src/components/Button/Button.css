@@ -5,6 +5,13 @@
   line-height: 2.5em;
 }
 
+.button:disabled {
+  cursor: not-allowed;
+  background: lightgray;
+  color: darkgray;
+  border-color: darkgray;
+}
+
 @keyframes spinner {
   to { transform: rotate(360deg); }
 }

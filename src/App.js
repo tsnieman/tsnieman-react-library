@@ -13,6 +13,10 @@ function App() {
       <Button className="hello-world">
         Hello there
       </Button>
+
+      <Button disabled>
+        Disabled
+      </Button>
     </div>
   );
 }
