@@ -16,11 +16,11 @@ const Button = ({
 
   return (
     <button
+      data-testid="button"
+      onClick={() => setClicked(true)}
       {...otherProps}
       className={mergeClassNames('button', otherProps.className)}
       data-clicked={clicked}
-      data-testid="button"
-      onClick={() => setClicked(true)}
     >
       {loading ? (
         <div className="spinner" />
