@@ -1,31 +1,51 @@
 {
-  "name": "storybook2",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "tsnieman-react-library",
+	"version": "1.0.0-alpha.4",
+	"license": "(ISC OR GPL-3.0)",
+	"private": false,
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tsnieman/tsnieman-react-library"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"storybook": "start-storybook -p 9009 -s public",
+		"build-storybook": "build-storybook -s public",
+		"build:prepublish": "NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/components --out-dir dist --copy-files"
+	},
+	"dependencies": {
+		"react": "^16.9.0",
+		"react-dom": "^16.9.0",
+		"react-scripts": "3.1.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.6.0",
+		"@storybook/addon-actions": "^5.2.1",
+		"@storybook/addon-links": "^5.2.1",
+		"@storybook/addons": "^5.2.1",
+		"@storybook/react": "^5.2.1"
+	},
+	"babel": {
+		"presets": [ "@babel/react" ]
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
 }
