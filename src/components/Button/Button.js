@@ -11,15 +11,22 @@ const Button = ({
   children,
   loading,
   ...otherProps
-}) => (
-  <button
-    {...otherProps}
-    className={mergeClassNames('button', otherProps.className)}
-  >
-    {loading ? (
-      <div className="spinner" />
-    ) : children}
-  </button>
-);
+}) => {
+  const [clicked, setClicked] = React.useState(false);
+
+  return (
+    <button
+      {...otherProps}
+      className={mergeClassNames('button', otherProps.className)}
+      data-clicked={clicked}
+      data-testid="button"
+      onClick={() => setClicked(true)}
+    >
+      {loading ? (
+        <div className="spinner" />
+      ) : children}
+    </button>
+  );
+};
 
 export default Button;
