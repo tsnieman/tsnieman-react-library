@@ -20,6 +20,36 @@ function Home() {
       <Button disabled>
         Disabled
       </Button>
+
+      <Button variant="primary">
+        Primary
+      </Button>
+
+      <Button variant="secondary">
+        Secondary
+      </Button>
+
+      <Button variant="outline">
+        Outline
+      </Button>
+
+      <div data-theme="dark">
+        <Button>
+          Dark theme
+        </Button>
+
+        <Button variant="primary">
+          Primary
+        </Button>
+
+        <Button variant="secondary">
+          Secondary
+        </Button>
+
+        <Button variant="outline">
+          Outline
+        </Button>
+      </div>
     </div>
   );
 }

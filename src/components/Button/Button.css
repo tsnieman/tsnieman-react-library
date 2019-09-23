@@ -1,15 +1,94 @@
+:root {
+  --base-unit: 1rem;
+  --base-margin: var(--base-unit);
+  --base-padding: 0.5em;
+
+  /* TODO ^^^ stuff that should be pulled up to a library level */
+
+  --brand-primary-hue: 200;
+  --brand-primary-saturation: 100%;
+  --brand-primary-lightness: 50%;
+  --brand-primary-color: #0af;
+
+  /* TODO ^^^ stuff that should be pulled up to a brand level */
+
+  --button-bg-hue: 0;
+  --button-bg-saturation: 0%;
+  --button-bg-lightness: 55%;
+  --button-bg: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness));
+  --button-border-color: hsl(var(--button-bg-hue), 0%, 45%);
+  --button-color: hsl(var(--button-bg-hue), 0%, 20%);
+  --button-line-height: 2.5em;
+  --button-padding: 0 var(--base-padding);
+  --button-border-width-top: 2px;
+  --button-border-width-bottom: 2px;
+  --button-border-width-right: 2px;
+  --button-border-width-left: 2px;
+  --button-border-width: var(--button-border-width-top) var(--button-border-width-right) var(--button-border-width-bottom) var(--button-border-width-left);
+}
+
 .button {
-  background: gray;
-  border: 2px solid black;
-  padding: 0 0.5em;
-  line-height: 2.5em;
+  font-size: 1em;
+  background: var(--button-bg);
+  border: solid var(--button-border-color);
+  border-width: var(--button-border-width);
+  padding: var(--button-padding);
+  line-height: calc(var(--button-line-height) - (var(--button-border-width-top) + var(--button-border-width-bottom)));
+  color: var(--button-color);
 }
 
 .button:disabled {
   cursor: not-allowed;
-  background: lightgray;
-  color: darkgray;
-  border-color: darkgray;
+  background: hsl(var(--button-bg-hue), 0%, 75%);
+  color: hsl(var(--button-bg-hue), 0%, 60%);
+  border-color: hsl(var(--button-bg-hue), 0%, 60%);
+}
+
+.button[data-variant="primary"] {
+  --button-bg-hue: var(--brand-primary-hue);
+  --button-bg-saturation: var(--brand-primary-saturation);
+  --button-bg-lightness: var(--brand-primary-lightness);
+  --button-bg: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness));
+  --button-border-color: hsl(var(--brand-primary-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) - 5%));
+  --button-color: hsl(var(--brand-primary-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) + 50%));
+}
+
+.button[data-variant="secondary"] {
+  --secondary-button-bg-hue: calc(var(--brand-primary-hue) + 110);
+  --button-bg: hsl(var(--secondary-button-bg-hue), var(--brand-primary-saturation),  var(--brand-primary-lightness));
+  --button-border-color: hsl(var(--secondary-button-bg-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) - 5%));
+  --button-color: hsl(var(--secondary-button-bg-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) + 50%));
+}
+
+.button[data-variant="outline"] {
+  --button-bg: white;
+  --button-border-color: hsl(var(--brand-primary-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) - 5%));
+  --button-color: var(--button-border-color);
+}
+
+[data-theme="dark"] .button[data-variant] {
+  --button-bg-hue: var(--brand-primary-hue);
+  --button-bg-saturation: var(--brand-primary-saturation);
+  --button-bg-lightness: 0%;
+  --button-bg: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness)); /* TODO oddly necessary */
+  --button-border-color: var(--button-bg);
+  --button-color: hsl(var(--brand-primary-hue), 0%, 75%);
+}
+
+[data-theme="dark"] .button[data-variant="primary"] {
+  --button-bg-lightness: 20%;
+}
+
+[data-theme="dark"] .button[data-variant="secondary"] {
+  --button-bg-hue: calc(var(--brand-primary-hue) + 110);
+  --button-bg-lightness: 20%;
+}
+
+[data-theme="dark"] .button[data-variant="outline"] {
+  --button-bg: transparent;
+  --button-bg-lightness: 20%;
+  --button-border-color: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness));
+  --button-color: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness));
 }
 
 @keyframes spinner {
