@@ -1,9 +1,9 @@
 :root {
   /* Base values */
-  --root-unit: 1rem;
+  --root-font-size: 112.5%;
+  --root-unit: 1rem; /* should be --root-font-size */
   --root-margin: var(--base-unit);
   --root-padding: 0.5em;
-  --root-font-size: 112.5%;
 
   /* Brand colors */
   --brand-primary-hue: 200;
