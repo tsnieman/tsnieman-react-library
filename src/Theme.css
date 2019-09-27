@@ -1,0 +1,28 @@
+:root {
+  /* Base values */
+  --root-unit: 1rem;
+  --root-margin: var(--base-unit);
+  --root-padding: 0.5em;
+  --root-font-size: 112.5%;
+
+  /* Brand colors */
+  --brand-primary-hue: 200;
+  --brand-primary-saturation: 100%;
+  --brand-primary-lightness: 50%;
+  --brand-primary-color: #0af;
+
+  /* Button values */
+  --button-bg-hue: 0;
+  --button-bg-saturation: 0%;
+  --button-bg-lightness: 55%;
+  --button-bg: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness));
+  --button-border-color: hsl(var(--button-bg-hue), 0%, 45%);
+  --button-color: hsl(var(--button-bg-hue), 0%, 20%);
+  --button-line-height: 2.5em;
+  --button-padding: 0 var(--root-padding);
+  --button-border-width-top: 2px;
+  --button-border-width-bottom: 2px;
+  --button-border-width-right: 2px;
+  --button-border-width-left: 2px;
+  --button-border-width: var(--button-border-width-top) var(--button-border-width-right) var(--button-border-width-bottom) var(--button-border-width-left);
+}
