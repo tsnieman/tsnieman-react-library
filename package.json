@@ -23,6 +23,10 @@
 		"react-dom": "^16.8.0"
 	},
 	"dependencies": {
+		"@chakra-ui/core": "^0.3.2",
+		"@emotion/core": "^10.0.17",
+		"@emotion/styled": "^10.0.17",
+		"emotion-theming": "^10.0.19",
 		"react-scripts": "3.1.2"
 	},
 	"devDependencies": {
