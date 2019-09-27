@@ -23,7 +23,10 @@
 		"react-dom": "^16.8.0"
 	},
 	"dependencies": {
-		"react-scripts": "3.1.2"
+		"@rebass/preset": "^4.0.5",
+		"emotion-theming": "^10.0.19",
+		"react-scripts": "3.1.2",
+		"rebass": "^4.0.6"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.6.0",
