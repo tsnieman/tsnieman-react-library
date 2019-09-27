@@ -1,0 +1,29 @@
+.button {
+  background: gray;
+  border: 2px solid black;
+  padding: 0 0.5em;
+  line-height: 2.5em;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background: lightgray;
+  color: darkgray;
+  border-color: darkgray;
+}
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
+.spinner::before {
+  content: '';
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner .6s linear infinite;
+}
