@@ -1,10 +1,21 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import Button from '../components/Button';
-import { text, boolean } from '@storybook/addon-knobs';
+import { text, boolean, select } from '@storybook/addon-knobs';
+
+import '../Theme.css';
+import '../App.css';
+import '../components/Button/Button.css';
 
 export default {
   title: 'Button',
+};
+
+const variants = {
+  default: 'default',
+  primary: 'primary',
+  secondary: 'secondary',
+  outline: 'outline',
 };
 
 export const plaintext = () => (
@@ -12,6 +23,7 @@ export const plaintext = () => (
     onClick={action('clicked')}
     disabled={boolean('Disabled', false)}
     loading={boolean('Loading', false)}
+    variant={select('Variant', variants, 'default')}
   >{text('Children', 'I am Button')}</Button>
 );
 

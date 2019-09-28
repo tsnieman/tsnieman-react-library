@@ -10,7 +10,7 @@ function mergeClassNames(name, others = '') {
 const Button = ({
   children,
   loading,
-  variant = '',
+  variant = 'default',
   ...otherProps
 }) => {
   const [clicked, setClicked] = React.useState(false);

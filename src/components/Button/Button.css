@@ -15,53 +15,6 @@
   border-color: hsl(var(--button-bg-hue), 0%, 60%);
 }
 
-.button[data-variant="primary"] {
-  --button-bg-hue: var(--brand-primary-hue);
-  --button-bg-saturation: var(--brand-primary-saturation);
-  --button-bg-lightness: var(--brand-primary-lightness);
-  --button-bg: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness));
-  --button-border-color: hsl(var(--brand-primary-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) - 5%));
-  --button-color: hsl(var(--brand-primary-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) + 50%));
-}
-
-.button[data-variant="secondary"] {
-  --secondary-button-bg-hue: calc(var(--brand-primary-hue) + 110);
-  --button-bg: hsl(var(--secondary-button-bg-hue), var(--brand-primary-saturation),  var(--brand-primary-lightness));
-  --button-border-color: hsl(var(--secondary-button-bg-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) - 5%));
-  --button-color: hsl(var(--secondary-button-bg-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) + 50%));
-}
-
-.button[data-variant="outline"] {
-  --button-bg: white;
-  --button-border-color: hsl(var(--brand-primary-hue), var(--brand-primary-saturation), calc(var(--brand-primary-lightness) - 5%));
-  --button-color: var(--button-border-color);
-}
-
-[data-theme="dark"] .button[data-variant] {
-  --button-bg-hue: var(--brand-primary-hue);
-  --button-bg-saturation: var(--brand-primary-saturation);
-  --button-bg-lightness: 0%;
-  --button-bg: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness)); /* TODO oddly necessary */
-  --button-border-color: var(--button-bg);
-  --button-color: hsl(var(--brand-primary-hue), 0%, 75%);
-}
-
-[data-theme="dark"] .button[data-variant="primary"] {
-  --button-bg-lightness: 20%;
-}
-
-[data-theme="dark"] .button[data-variant="secondary"] {
-  --button-bg-hue: calc(var(--brand-primary-hue) + 110);
-  --button-bg-lightness: 20%;
-}
-
-[data-theme="dark"] .button[data-variant="outline"] {
-  --button-bg: transparent;
-  --button-bg-lightness: 20%;
-  --button-border-color: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness));
-  --button-color: hsl(var(--button-bg-hue), var(--button-bg-saturation), var(--button-bg-lightness));
-}
-
 @keyframes spinner {
   to { transform: rotate(360deg); }
 }
@@ -73,7 +26,8 @@
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  border: 2px solid #ccc;
-  border-top-color: #000;
-  animation: spinner .6s linear infinite;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-top-color: currentColor;
+  animation: spinner 0.6s linear infinite;
+  vertical-align: text-top;
 }

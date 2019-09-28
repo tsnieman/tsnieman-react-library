@@ -4,3 +4,15 @@
 .home .button + .button {
   margin-left: 1rem;
 }
+
+.home [data-size] + [data-size] {
+  margin-top: 1rem;
+}
+
+.home [data-size="0.5x"] {
+  font-size: 0.5em;
+}
+
+.home [data-size="2x"] {
+  font-size: 2em;
+}
