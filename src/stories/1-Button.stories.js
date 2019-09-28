@@ -3,6 +3,7 @@ import { action } from '@storybook/addon-actions';
 import Button from '../components/Button';
 import { jsxDecorator } from 'storybook-addon-jsx';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withA11y } from '@storybook/addon-a11y';
 
 export default {
   title: 'Button',
@@ -10,6 +11,7 @@ export default {
   decorators: [
     withKnobs,
     jsxDecorator, // TODO do this globally
+    withA11y,
   ],
 };
 
