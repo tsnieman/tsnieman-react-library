@@ -1,3 +1,6 @@
 .home {
-  background: #f5f5f5;
+}
+
+.home .button + .button {
+  margin-left: 1rem;
 }

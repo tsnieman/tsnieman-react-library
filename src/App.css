@@ -1,0 +1,8 @@
+html {
+  font-size: var(--root-font-size);
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAFElEQVQYlWNgIBIYE6uQjoCKbgIAPGYAZ4+J8sYAAAAASUVORK5CYII=);
+}
+
+* {
+  box-sizing: border-box;
+}
