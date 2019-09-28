@@ -10,6 +10,7 @@ function mergeClassNames(name, others = '') {
 const Button = ({
   children,
   loading,
+  variant = 'default',
   ...otherProps
 }) => {
   const [clicked, setClicked] = React.useState(false);
@@ -18,6 +19,7 @@ const Button = ({
     <button
       data-testid="button"
       onClick={() => setClicked(true)}
+      data-variant={variant}
       {...otherProps}
       className={mergeClassNames('button', otherProps.className)}
       data-clicked={clicked}

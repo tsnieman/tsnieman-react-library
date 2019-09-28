@@ -1,15 +1,18 @@
 .button {
-  background: gray;
-  border: 2px solid black;
-  padding: 0 0.5em;
-  line-height: 2.5em;
+  font-size: 1em;
+  background: var(--button-bg);
+  border: solid var(--button-border-color);
+  border-width: var(--button-border-width);
+  padding: var(--button-padding);
+  line-height: calc(var(--button-line-height) - (var(--button-border-width-top) + var(--button-border-width-bottom)));
+  color: var(--button-color);
 }
 
 .button:disabled {
   cursor: not-allowed;
-  background: lightgray;
-  color: darkgray;
-  border-color: darkgray;
+  background: hsl(var(--button-bg-hue), 0%, 75%);
+  color: hsl(var(--button-bg-hue), 0%, 60%);
+  border-color: hsl(var(--button-bg-hue), 0%, 60%);
 }
 
 @keyframes spinner {
@@ -23,7 +26,8 @@
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  border: 2px solid #ccc;
-  border-top-color: #000;
-  animation: spinner .6s linear infinite;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-top-color: currentColor;
+  animation: spinner 0.6s linear infinite;
+  vertical-align: text-top;
 }

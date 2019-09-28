@@ -1,0 +1,129 @@
+:root {
+  /* Abstract values */
+  --browser-default-font-size-px: 16;
+  --root-font-size-px: 18;
+
+  /* Root values */
+  --root-font-size: calc(var(--root-font-size-px) / var(--browser-default-font-size-px) * 100%);
+  --root-unit: 1rem; /* should be --root-font-size */
+  --root-margin: var(--root-unit);
+  --root-padding: 0.5em;
+
+  /* Brand colors */
+  --brand-primary-hue: 200;
+  --brand-primary-saturation: 100%;
+  --brand-primary-lightness: 50%;
+  --brand-primary-color: #0af;
+}
+
+.button {
+  /* Default <Button> values */
+  --button-bg-hue: 0;
+  --button-bg-saturation: 0%;
+  --button-bg-lightness: 75%;
+  --button-bg-alpha: 100%;
+  --button-bg: hsla(
+    var(--button-bg-hue),
+    var(--button-bg-saturation),
+    var(--button-bg-lightness),
+    var(--button-bg-alpha)
+  );
+  --button-border-color: hsla(
+    var(--button-bg-hue),
+    var(--button-bg-saturation),
+    calc(var(--button-bg-lightness) - 8%),
+    1
+  );
+  --button-color: hsla(
+    var(--button-bg-hue),
+    0%,
+    20%,
+    1
+  );
+  --button-line-height: 2.5em;
+  --button-padding: 0 calc(var(--root-padding) * 3);
+  --button-border-width-top: calc(2 / 18 * 1em);
+  --button-border-width-bottom: calc(2 / 18 * 1em);
+  --button-border-width-right: calc(2 / 18 * 1em);
+  --button-border-width-left: calc(2 / 18 * 1em);
+  --button-border-width:
+    var(--button-border-width-top)
+    var(--button-border-width-right)
+    var(--button-border-width-bottom)
+    var(--button-border-width-left)
+  ;
+}
+
+.button[data-variant="default"] {
+}
+
+.button[data-variant="primary"] {
+  --button-bg-hue: var(--brand-primary-hue);
+  --button-bg-saturation: var(--brand-primary-saturation);
+  --button-bg-lightness: var(--brand-primary-lightness);
+  --button-color: hsla(
+    var(--button-bg-hue),
+    0%,
+    calc(var(--button-bg-lightness) + 100%),
+    1
+  );
+}
+
+.button[data-variant="secondary"] {
+  --button-bg-hue: calc(var(--brand-primary-hue) * 1.7);
+  --button-bg-saturation: var(--brand-primary-saturation);
+  --button-bg-lightness: var(--brand-primary-lightness);
+  --button-color: hsla(
+    var(--button-bg-hue),
+    0%,
+    calc(var(--button-bg-lightness) + 100%),
+    1
+  );
+}
+
+.button[data-variant="outline"] {
+  --button-bg-hue: var(--brand-primary-hue);
+  --button-bg-saturation: var(--brand-primary-saturation);
+  --button-bg-lightness: var(--brand-primary-lightness);
+  --button-bg-alpha: 0;
+  --button-color: var(--brand-primary-color);
+  --button-border-color: currentColor;
+}
+
+[data-theme="dark"] .button {
+  --button-bg-lightness: 25%;
+  --button-color: hsla(
+    var(--button-bg-hue),
+    0%,
+    calc(var(--button-bg-lightness) + 70%),
+    1
+  );
+}
+
+[data-theme="dark"] .button[data-variant="default"] {
+}
+
+[data-theme="dark"] .button[data-variant="primary"] {
+  --button-bg-hue: var(--brand-primary-hue);
+  --button-bg-saturation: var(--brand-primary-saturation);
+  --button-bg-lightness: calc(var(--brand-primary-lightness) - 20%);
+}
+
+[data-theme="dark"] .button[data-variant="secondary"] {
+}
+
+[data-theme="dark"] .button[data-variant="outline"] {
+  --button-bg-hue: var(--brand-primary-hue);
+  --button-bg-saturation: var(--brand-primary-saturation);
+  --button-bg-lightness: calc(var(--brand-primary-lightness) - 20%);
+  /* TODO ^ Not sure why i have to repeat these if .button[data-variant="outline"] already has these
+   * exact definitions. */
+
+  --button-color: hsla(
+    var(--button-bg-hue),
+    var(--button-bg-saturation),
+    var(--button-bg-lightness),
+    1
+  );
+  --button-border-color: currentColor;
+}
